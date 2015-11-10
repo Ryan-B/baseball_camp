@@ -1,0 +1,34 @@
+*{
+	margin: 10px;
+}
+#camper_photo{
+	border: 4px solid black;
+	display: inline-block;
+}
+#parent_info{
+	display: inline-block;
+	
+	width: 640px;
+	vertical-align: top;
+}
+#player_form{
+	width: 400px;
+	height: 600px;
+	border: 1px solid purple;
+	display: inline-block;
+	float: right;
+	vertical-align: top;
+}
+h2{
+	
+}
+body{
+	height: 100%;
+}
+.input{
+	width: 250px;
+	margin: 3px;
+}
+#favorite{
+
+}

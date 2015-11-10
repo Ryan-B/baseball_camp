@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Player</title>
+	<link rel="stylesheet" type="text/css" href="static/styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h3>Hey {{session['camper_first']}} {{session['camper_last']}} and {{session['parent_first']}} {{session['parent_last']}}!</h3>
+	<h5>Check out your own webpage and your fellow camper's pages too!</h5>
+
+	
+	<table class="table table-bordered">
+		<tr>
+			<th>Camper Name</th>
+			<th>Parent Name</th>
+		</tr>
+		{% for camp in camper %}
+		<tr>
+			<td><a href="/camper_page/{{camp['id']}}">{{ camp['camper_first'] }} {{ camp['camper_last'] }}</a></td>
+			<td>{{ camp['parent_first'] }} {{ camp['parent_last'] }}</td>
+		</tr>
+			{%endfor%}
+	</table>
+	<!-- <video width="320" height="240" controls>
+  <source src="/static/Baseball.mp4" type="video/mp4">
+ 
+</video> -->
+
+	
+	<a class="btn btn-danger" href="/logout">Logout</a>
+	<a class="btn btn-primary" href="/">Back</a>
+</body>
+</html>
+			
+			
+				

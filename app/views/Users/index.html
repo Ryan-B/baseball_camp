@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>West Seattle Baseball Camp</title>
+	<link rel="stylesheet" type="text/css" href="static/CSS/styles.css">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	
+</head>
+<body>
+	<div id ="container">
+		<div id="top_header">
+			
+			<ul id = "top_header_list">
+				
+				<li><a href="">Schedule</a></li>
+				<li><a href="">Coach Mike</a></li>
+				<li><a href="">Coach Justin</a></li>
+			
+		
+		
+			
+				{% if session['parent_first'] %}
+				<li><p id="welcome">Welcome: {{session['parent_first']}} {{session['parent_last']}}</p></li>
+				<li><a class="btn btn-primary" href="/all_players">Roster</a></li>
+				<li><a class="btn btn-danger" href="/logout">Log Out</a></li>
+				{% else %}
+			<!-- <form class="form-inline" action="/sign_in" method="POST">
+				<li><input type='text' name='email' placeholder="Parent's Email"></li>
+				<li><input type='password' name='parent_password' placeholder="Parent's Password"></li>
+				<li><input class="btn btn-success" type='submit' value="Log In"></li>
+			</form> -->
+					
+				<form class="form-inline" action="/sign_in" method="POST">
+				<div class="form-group">
+					<label for="email"></label>
+					<input type="email" class="form-control" id="email" name='email' placeholder="email">
+				</div>
+				<div class="form-group">
+					<label for="password"></label>
+					<input type="password" class="form-control" id="password" name='parent_password' placeholder="password">
+				</div>
+					<button type="submit" class="btn btn-success">Log In</button>
+				</form>
+				{% endif %}
+				
+			</ul>
+			<!-- <ul id = "top_image_list">
+				<li><img src="https://image.freepik.com/free-icon/facebook-logo_318-49940.png" alt="facebook" class="img-circle" id="twitter"></li>
+				<li><img src="http://www.hollycunningham.com/include/images/structure/Twitter-Icon.png" alt="twitter" class="img-circle" id="twitter"></li>
+				<li><img src="http://images.clipshrine.com/download/downloadsvg/Mail-Sign-White-on-Black-2274-svg.svg" alt="mail" class="img-circle" id="twitter"></li>
+			</ul> -->
+			
+		</div>	
+		
+		<img id = "top_img" src="static/images/view/kids.jpg" alt="kids">
+		<h1 id="title">WEST SEATTLE BASEBALL CAMP<h1>
+		<div id="left_list">
+			<ul id="left_ul">
+				<li><a href="/pay">Payment Plans</a></li>
+				<hr>
+				<li><a href="/faq">FAQ's</a></li>
+				<hr>
+				<li><a href="/extra_bens">Extra Benefits</a></li>
+				<hr>
+				<li><a href="/maps">Maps and Directions</a></li>
+				<hr>
+				<li><a href="/alki">Alki Activites</a></li>
+				<hr>
+			</ul>
+		</div>
+		<div id='main'>
+			<h3>Developing Skills and Frendships:</h3>
+
+			<p id = "main_p">Our goal at <span id="ws">West Seattle Baseball Camp</span> is to build upon your camper's fundemental skills in all major facets of the game: <span id="skills">Hitting, Fielding, Throwing, Pitching, Baserunning, Rules, Personal Behavior and Team Building. </span></p>
+			
+			<h3>Dynamic Interaction with Coaches:</h3>
+			 <p id = "main_p">We here at <span id="ws">West Seattle Baseball Camp</span> are happy to offer each camper an <span id ="web">individual webpage</span> that will be updated daily with images and short videos. Parents who are unable to attend camp each day will still have the opprotunity to see the daily improvement of your camper's skills.</p>
+				<form id="register" action="/register_show" method="GET">
+					<input class="btn btn-primary" type="submit" value="REGISTER">
+				</form>
+		</div>
+	</div>
+	 
+		
+
+</body>
+</html>
+		

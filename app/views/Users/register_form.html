@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Register</title>
+	<link rel="stylesheet" type="text/css" href="static/CSS/register_styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3	.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3	.3.5/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id = "container">
+	<div id = "griffey_form">
+	<h2 id= 'title'>*Please fill out every form field:</h1>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{ msg }}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+		<form action='/create' method='post'>
+			<input type='text' name='camper_first' placeholder="Camper's First Name">
+			<input type='text' name='camper_last' placeholder="Camper's Last Name">
+			<input type='password' name='camper_password' placeholder="Camper's Password">
+			<input type='password' name='camper_password_confirm' placeholder="Confirm Password">
+			<br><hr>
+			<input type='text' name='parent_first' placeholder="Parent's First Name">
+			<input type='text' name='parent_last' placeholder="Parent's Last Name">
+			<input type='password' name='parent_password' placeholder="Parent's Password">
+			<input type='password' name='parent_password_confirm' placeholder="Confirm Password">
+			<br><hr>
+			<input type='text' name='email' placeholder="Parent's Email">
+			<input type='text' name='phone_number' placeholder="Parent's Phone Number">
+			<input type='text' name='home_address' placeholder="Home Address">
+			<br>
+			<a id="goback" href="/" class="btn btn-danger">Go Back</a>
+			<input class="btn btn-success" type='submit' value='Register'>
+<!-- <video width="320" height="240" controls>
+	<source src="/static/Centerfield.mp4" type="video/mp4">
+</video> -->
+			
+		</form>
+	</div>
+	<img id = "balls" src="static/images/view/balls.jpg" alt="balls">
+</div>			
+	
+</body>
+</html>

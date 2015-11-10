@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Maps</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3	.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3	.3.5/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- gmaps api -->
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+
+      function initMap() {
+  var myLatLng = {lat: 47.5753451, lng: -122.398839};
+  var Bar_S_marker = {lat: 47.5754627, lng: -122.4158999}
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: myLatLng
+  });
+
+  var marker = new google.maps.Marker({
+    position: Bar_S_marker,
+    map: map,
+    title: 'Hello World!'
+  });
+}
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFbAShs-Vid1qTYfGxXzJgMJAVHM8vMs&callback=initMap"></script>
+</head>
+<body>
+	
+	<h4>Bar-S Playground-- 6425 SW Admiral Way Seattle, WA 98116</h4>
+	<img src="/static/images/view/bar_s.jpg" alt="bar_s" id="bar_s">
+	<div id="map"></div>
+
+	<a id="back" href="/" class="btn btn-danger">Go Back</a>
+</body>
+</html>
+<style type="text/css">
+
+
+#map {
+width:  600px;
+height: 500px;
+background-color: #CCC;
+margin: 20px;
+}
+#back{
+	margin-top: 20px;
+	margin-left: 400px;
+}
+h4{
+	margin-left: 20px;
+}
+#bar_s{
+  display: inline-block;
+}
+
+</style>

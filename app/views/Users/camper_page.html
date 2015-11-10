@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Camper Page</title>
+	<link rel="stylesheet" type="text/css" href="/static/CSS/camper_page.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<img id ="camper_photo" src="/static/images/user_photo/{{camper[0]['id']}}.jpg" alt="camper_photo">
+	<div id="parent_info">
+		<p id="welcome">Welcome: {{session['parent_first']}} {{session['parent_last']}}
+				<a href="/all_players" class="btn btn-primary">Go Back</a>
+				<a class="btn btn-danger" href="/logout">Log Out</a></p>
+	<table class="table table-bordered">
+		<tr>
+			<th>Parent's Name</th>
+			<th>Email</th>
+			<th>Phone Number</th>
+			<th>Address</th>
+		</tr>
+		<tr>
+			<td>{{camper[0]['parent_first']}} {{camper[0]['parent_last']}}</td>
+			<td>{{camper[0]['email']}}</td>
+			<td>{{camper[0]['phone_number']}}</td>
+			<td>{{camper[0]['home_address']}}</td>
+		</tr>
+	
+	</table>
+	<h2>Check out {{camper[0]['camper_first']}}'s webpage!</h2>
+
+{% if camper[0]['parent_last'] == session['parent_last'] and camper[0]['pizza'] == None %}
+	<form id="favorite" action="/player_favorite/{{camper[0]['id']}}" method="POST">
+		<input class="input" type="text" name="pizza" placeholder="{{camper[0]['camper_first']}}'s Favorite Pizza"><br>
+		<input class="input" type="text" name="favorite_baseball"  placeholder="{{camper[0]['camper_first']}}'s Favorite Baseball Player"><br>
+		<input class="input" type="text" name="favorite_seahawk" placeholder="{{camper[0]['camper_first']}}'s Favorite Seahawk Player"><br>
+		<input class="input" type="text" name="favorite_book" placeholder="{{camper[0]['camper_first']}}'s Favorite Book"><br>
+		<input class="btn btn-success" type="submit" value="submit">
+	</form>
+	{% else %}
+	<div id = "favorite">
+		<p>{{camper[0]['camper_first']}}'s Favorites</p>
+		<p>Pizza: {{camper[0]['pizza']}}</p>
+		<p>Baseball Player: {{camper[0]['favorite_baseball']}} </p>
+		<p>Seahawk: {{camper[0]['favorite_seahawk']}}</p>
+		<p>Book: {{camper[0]['favorite_book']}}</p>
+	</div>
+	{% endif %}
+	</div>
+
+	<!-- and camper[0]['pizza'] == 'none' -->
+</body>
+</html>

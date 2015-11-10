@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Payment Plans</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h3>Hey, {{session['parent_first']}} {{session['parent_last']}}: how would you like to pay for {{session['camper_first']}}'s camp?</h3>
+
+		<h5>One Time Fee: one payment of $500</h5>
+		<h5>Half Now Half Later: two payments of $275</h5>
+		<h5>Month by Month: six payments of $100</h5>
+
+		<form action="" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+    data-amount="50000"
+    data-name="West Seattle Baseball Camp"
+    data-description="One time fee: $500"
+    data-image="/128x128.png"
+    data-locale="auto">
+
+  </script>
+</form>
+
+		<a href="/" class="btn btn-danger">Go Back</a>
+</body>
+</html>
