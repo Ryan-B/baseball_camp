@@ -27,7 +27,6 @@ class Users(Controller):
             return redirect('/register_show')
 
     def player_favorite(self, id):
-        print "hello woorld"
         favorite_info = request.form
         print favorite_info
         self.models['User'].favorite(favorite_info, id)
