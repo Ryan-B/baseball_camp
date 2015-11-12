@@ -28,23 +28,27 @@ class StagingDBConfig(DBConfig):
 
 
 class ProductionDBConfig(DBConfig):
-    if 'CLEARDB_DATABASE_URL' in os.environ:
-        url = urlparse.urlparse(os.environ['CLEARDB_DATABASE_URL'])
+    # if 'CLEARDB_DATABASE_URL' in os.environ:
+    #     url = urlparse.urlparse(os.environ['CLEARDB_DATABASE_URL'])
 
-        # Ensure default database exists.
-        # DATABASES['default'] = DATABASES.get('default', {})
+    #     # Ensure default database exists.
+    #     # DATABASES['default'] = DATABASES.get('default', {})
 
-        # Update with environment configuration.
-        # DATABASES['default'].update({
-        #     'NAME': url.path[1:],
-        #     'USER': url.username,
-        #     'PASSWORD': url.password,
-        #     'HOST': url.hostname,
-        #     'PORT': url.port,
-        # })
+    #     # Update with environment configuration.
+    #     # DATABASES['default'].update({
+    #     #     'NAME': url.path[1:],
+    #     #     'USER': url.username,
+    #     #     'PASSWORD': url.password,
+    #     #     'HOST': url.hostname,
+    #     #     'PORT': url.port,
+    #     # })
 
-    DB_USERNAME = url.username
-    DB_PASSWORD = url.password
-    DB_DATABASE_NAME = url.path[1:]
-    DB_HOST = url.hostname
+    # DB_USERNAME = url.username
+    # DB_PASSWORD = url.password
+    # DB_DATABASE_NAME = url.path[1:]
+    # DB_HOST = url.hostname
+    DB_USERNAME = 'root'
+    DB_PASSWORD = 'root'
+    DB_DATABASE_NAME = 'baseball'
+    DB_HOST = 'localhost'
 
